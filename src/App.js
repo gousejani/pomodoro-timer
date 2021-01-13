@@ -9,12 +9,12 @@ export default class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      session:25,
-      break:5,
+      session:5,
+      break:1,
       totalTime:0,
       timeLeft:0,
       displayTime:{
-        m:"25",
+        m:"05",
         s:"00"
       },
       timerName:'Session',
@@ -122,7 +122,8 @@ export default class App extends Component {
   }
 
   click(e){
-    switch(e.target.id){
+    // console.log(e.target.parentElement.id)
+    switch(e.target.parentElement.id){
       case 'break-up':
         this.setState(state=>({
           break: state.break + 1
@@ -152,7 +153,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div className ="main-app container">
         {/* <Pomodoro time = {this.state} play ={this.play} pause = {this.pause} reset ={this.reset} click={this.click}/> */}
         <Timer timerName = {this.state.timerName} displayTime = {this.state.displayTime}/>
         <TimerControls play ={this.play} pause ={this.pause} reset={this.reset}/>
