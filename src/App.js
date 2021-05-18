@@ -9,12 +9,12 @@ export default class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      session:5,
-      break:1,
+      session:45,
+      break:10,
       totalTime:0,
       timeLeft:0,
       displayTime:{
-        m:"05",
+        m:"45",
         s:"00"
       },
       timerName:'Session',
